@@ -1,14 +1,9 @@
 // import { Aside } from '@/components/AsideMenu';
 import { Button } from '@/components/ui/button';
 import { createLazyFileRoute } from '@tanstack/react-router';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { DollarSign } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export const Route = createLazyFileRoute('/dashboard/_layout/')({
   component: Dashboard,
@@ -17,7 +12,7 @@ export const Route = createLazyFileRoute('/dashboard/_layout/')({
 function Dashboard() {
   return (
     <section className="antialiased">
-      <header className="flex items-center justify-between space-y-2">
+      <header className="flex items-center justify-between space-y-2 pb-2">
         <h2 className="text-3xl font-bold capitalize tracking-tight">dashboard</h2>
         <div className="flex items-center space-x-2">
           <DatePickerWithRange />
@@ -25,44 +20,59 @@ function Dashboard() {
         </div>
       </header>
 
+      <Tabs defaultValue="account" className=" w-full">
+        <TabsList className="">
+          <TabsTrigger value="account">Account</TabsTrigger>
+          <TabsTrigger value="password">Password</TabsTrigger>
+          <TabsTrigger value="analytics">Analytics</TabsTrigger>
+          <TabsTrigger value="notifications">Notifications</TabsTrigger>
+        </TabsList>
+        <TabsContent value="account">Make changes to your account here.</TabsContent>
+        <TabsContent value="password">Change your password here.</TabsContent>
+      </Tabs>
+
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
-          <CardHeader>
-            <CardTitle>Card Title</CardTitle>
-            <CardDescription>Card Description</CardDescription>
+          <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-base font-medium">Card Title</CardTitle>
+            <DollarSign className="size-4" />
           </CardHeader>
           <CardContent>
-            <p>Card Content</p>
+            <span className="text-2xl font-bold">$45,231.89</span>
+            <p className="text-xs text-muted-foreground">+20.1% from last month</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader>
-            <CardTitle>Card Title</CardTitle>
-            <CardDescription>Card Description</CardDescription>
+          <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-base font-medium">Card Title</CardTitle>
+            <DollarSign className="size-4" />
           </CardHeader>
           <CardContent>
-            <p>Card Content</p>
+            <span className="text-2xl font-bold">$45,231.89</span>
+            <p className="text-xs text-muted-foreground">+20.1% from last month</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader>
-            <CardTitle>Card Title</CardTitle>
-            <CardDescription>Card Description</CardDescription>
+          <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-base font-medium">Card Title</CardTitle>
+            <DollarSign className="size-4" />
           </CardHeader>
           <CardContent>
-            <p>Card Content</p>
+            <span className="text-2xl font-bold">$45,231.89</span>
+            <p className="text-xs text-muted-foreground">+20.1% from last month</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader>
-            <CardTitle>Card Title</CardTitle>
-            <CardDescription>Card Description</CardDescription>
+          <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-base font-medium">Card Title</CardTitle>
+            <DollarSign className="size-4" />
           </CardHeader>
           <CardContent>
-            <p>Card Content</p>
+            <span className="text-2xl font-bold">$45,231.89</span>
+            <p className="text-xs text-muted-foreground">+20.1% from last month</p>
           </CardContent>
         </Card>
       </div>
@@ -75,7 +85,7 @@ import { addDays, format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { DateRange } from 'react-day-picker';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 

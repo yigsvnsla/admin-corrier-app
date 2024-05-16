@@ -10,8 +10,7 @@ function Layout() {
     <section className="antialiased">
       <Aside />
       <main className="flex min-h-screen flex-col p-4  dark:text-gray-200 md:ml-64">
-        {/* Main content dashboard */}
-        <Outlet />
+        <Outlet /> {/* Main content dashboard */}
       </main>
     </section>
   );
