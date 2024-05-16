@@ -8,7 +8,7 @@ export const Aside = () => {
       aria-label="Sidenav"
       className="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full rounded-r-lg border-r border-gray-200 bg-primary-foreground  transition-transform dark:border-neutral-800 md:translate-x-0">
       {/* Sidebar component, swap this element with another sidebar if you like */}
-      <header className="flex  h-12 shrink-0 items-center gap-2 p-4 ">
+      <header className="mt-4  flex h-12 shrink-0 items-center gap-2 p-4 ">
         <img
           className="h-8 w-auto"
           src="https://tailwindui.com/img/logos/mark.svg?color=white"

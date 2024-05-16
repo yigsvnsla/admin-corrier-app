@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "..",
+    },
+  ],
+  "settings": {
+    "vite.port": 5173,
+    "vite.devCommand": "pnpm dev --host",
+    "vite.buildCommand": "pnpm build",
+    "vite.browserType": "system",
+    "vite.autoStart":true,
+  },
+}
